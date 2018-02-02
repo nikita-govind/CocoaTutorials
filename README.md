@@ -1,2 +1,0 @@
-# CocoaTutorials
-My Cocoa notes
