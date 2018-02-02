@@ -1,0 +1,60 @@
+[1] History of COCOA
+---------------------
+1. Steve Jobs + Steve Wozniak = Apple
+2. CEO = John Sculley => Steve Jobs position--
+3. Steve Jobs = Next (Computer, printer, dev tools, os)
+4. Computers, printers! sell
+5. OS, dev tools => Next SW called NextSTEP
+6. Core of NextSTEP = BSD Unix. Source code for this part is called Drawin.
+7. Next step = window server for the OS.It gets events from the user, forwards them to the applications, and puts data from the applications onto the screen.
+8. NeXTSTEP came with a set of libraries and tools to enable programmers to deal with the window manager in an elegant manner. The libraries were called frameworks. In 1993, the frameworks and tools were revised and renamed OpenStep, which was itself later renamed Cocoa.
+9. NextStep then became Mac OS X
+
+[2] What is COCOA?
+---------------------
+1. Cocoa enables your application to receive events from the window server and draw to the screen.
+2. 
+
+  ----------------------                                                       --------------       ---------------
+
+   Windows Server        --------> User events (clicks, etc)                      COCOA              My application
+   (Unix process)        Drawing back (display result,data) <---------                               (Unix process)
+
+  ----------------------                                                       --------------       ---------------
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ (Everything above lies on top of a BSD Unix layer)
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+ (Everything above lies on top of teh Mach Microkernel layer)
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+3. Programming with frameworks is done using Objective C.
+
+[3] What are the tools used?
+----------------------------
+1. Compiler: LLVM or GNU
+2. Debugger: LLDB or GDB
+3. Design: Xcode - Interface Builder
+4. Profiling the app: Xcode - Instruments
+
+[4] Some common terms
+-------------------------
+1. Framework: 
+- A directory that is a collection of classes compiled together in the form of a resuable code library
+- Directory also contains any related resources.
+- Directory has extension .framework
+
+- Cocoa.framework imports 3 core Objective-C frameworks:
+- 1. AppKit.framework: all UI
+- 2. Foundation.framework: data management, network communication and other low level features
+- 3. CoreData.framework: save your objects to a file and then reload them into memory (persistence framework)- manage the data model later based on MVC design pattern.
+
+2. Application:
+- A program that creates windows.
+- It links against a framework at compile time.
+
+3. Bundle/ Plug-in:
+- Same as a framework, but dynamically loaded at runtime.
+
+4. Tool:
+- A program with no GUI. Like a CLI or a daemon.
+ 
