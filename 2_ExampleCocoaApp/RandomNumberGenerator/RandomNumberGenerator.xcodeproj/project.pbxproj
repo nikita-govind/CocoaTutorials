@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		41A86A892023D3EB00A5E863 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A86A882023D3EB00A5E863 /* AppDelegate.m */; };
+		41A86A8C2023D3EB00A5E863 /* RandomNumberGenerator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 41A86A8A2023D3EB00A5E863 /* RandomNumberGenerator.xcdatamodeld */; };
+		41A86A8E2023D3EB00A5E863 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41A86A8D2023D3EB00A5E863 /* Assets.xcassets */; };
+		41A86A912023D3EB00A5E863 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41A86A8F2023D3EB00A5E863 /* MainMenu.xib */; };
+		41A86A942023D3EB00A5E863 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A86A932023D3EB00A5E863 /* main.m */; };
+		41A86A9F2023D3EB00A5E863 /* RandomNumberGeneratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A86A9E2023D3EB00A5E863 /* RandomNumberGeneratorTests.m */; };
+		41A86AAA2023D3EB00A5E863 /* RandomNumberGeneratorUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A86AA92023D3EB00A5E863 /* RandomNumberGeneratorUITests.m */; };
+		41A86AB82023D97A00A5E863 /* howTo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 41A86AB72023D97A00A5E863 /* howTo.txt */; };
+		41A86ABB2023DEE800A5E863 /* RandomController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A86ABA2023DEE800A5E863 /* RandomController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		41A86A9B2023D3EB00A5E863 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 41A86A7C2023D3EB00A5E863 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 41A86A832023D3EB00A5E863;
+			remoteInfo = RandomNumberGenerator;
+		};
+		41A86AA62023D3EB00A5E863 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 41A86A7C2023D3EB00A5E863 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 41A86A832023D3EB00A5E863;
+			remoteInfo = RandomNumberGenerator;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		41A86A842023D3EB00A5E863 /* RandomNumberGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomNumberGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		41A86A872023D3EB00A5E863 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		41A86A882023D3EB00A5E863 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		41A86A8B2023D3EB00A5E863 /* RandomNumberGenerator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RandomNumberGenerator.xcdatamodel; sourceTree = "<group>"; };
+		41A86A8D2023D3EB00A5E863 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		41A86A902023D3EB00A5E863 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		41A86A922023D3EB00A5E863 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41A86A932023D3EB00A5E863 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		41A86A952023D3EB00A5E863 /* RandomNumberGenerator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RandomNumberGenerator.entitlements; sourceTree = "<group>"; };
+		41A86A9A2023D3EB00A5E863 /* RandomNumberGeneratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RandomNumberGeneratorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		41A86A9E2023D3EB00A5E863 /* RandomNumberGeneratorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RandomNumberGeneratorTests.m; sourceTree = "<group>"; };
+		41A86AA02023D3EB00A5E863 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41A86AA52023D3EB00A5E863 /* RandomNumberGeneratorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RandomNumberGeneratorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		41A86AA92023D3EB00A5E863 /* RandomNumberGeneratorUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RandomNumberGeneratorUITests.m; sourceTree = "<group>"; };
+		41A86AAB2023D3EB00A5E863 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41A86AB72023D97A00A5E863 /* howTo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = howTo.txt; sourceTree = "<group>"; };
+		41A86AB92023DEBD00A5E863 /* RandomController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RandomController.h; sourceTree = "<group>"; };
+		41A86ABA2023DEE800A5E863 /* RandomController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RandomController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		41A86A812023D3EB00A5E863 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41A86A972023D3EB00A5E863 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41A86AA22023D3EB00A5E863 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		41A86A7B2023D3EB00A5E863 = {
+			isa = PBXGroup;
+			children = (
+				41A86A862023D3EB00A5E863 /* RandomNumberGenerator */,
+				41A86A9D2023D3EB00A5E863 /* RandomNumberGeneratorTests */,
+				41A86AA82023D3EB00A5E863 /* RandomNumberGeneratorUITests */,
+				41A86A852023D3EB00A5E863 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		41A86A852023D3EB00A5E863 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				41A86A842023D3EB00A5E863 /* RandomNumberGenerator.app */,
+				41A86A9A2023D3EB00A5E863 /* RandomNumberGeneratorTests.xctest */,
+				41A86AA52023D3EB00A5E863 /* RandomNumberGeneratorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		41A86A862023D3EB00A5E863 /* RandomNumberGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				41A86AB72023D97A00A5E863 /* howTo.txt */,
+				41A86A872023D3EB00A5E863 /* AppDelegate.h */,
+				41A86A882023D3EB00A5E863 /* AppDelegate.m */,
+				41A86A8D2023D3EB00A5E863 /* Assets.xcassets */,
+				41A86A8F2023D3EB00A5E863 /* MainMenu.xib */,
+				41A86A922023D3EB00A5E863 /* Info.plist */,
+				41A86A932023D3EB00A5E863 /* main.m */,
+				41A86A952023D3EB00A5E863 /* RandomNumberGenerator.entitlements */,
+				41A86A8A2023D3EB00A5E863 /* RandomNumberGenerator.xcdatamodeld */,
+				41A86AB92023DEBD00A5E863 /* RandomController.h */,
+				41A86ABA2023DEE800A5E863 /* RandomController.m */,
+			);
+			path = RandomNumberGenerator;
+			sourceTree = "<group>";
+		};
+		41A86A9D2023D3EB00A5E863 /* RandomNumberGeneratorTests */ = {
+			isa = PBXGroup;
+			children = (
+				41A86A9E2023D3EB00A5E863 /* RandomNumberGeneratorTests.m */,
+				41A86AA02023D3EB00A5E863 /* Info.plist */,
+			);
+			path = RandomNumberGeneratorTests;
+			sourceTree = "<group>";
+		};
+		41A86AA82023D3EB00A5E863 /* RandomNumberGeneratorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				41A86AA92023D3EB00A5E863 /* RandomNumberGeneratorUITests.m */,
+				41A86AAB2023D3EB00A5E863 /* Info.plist */,
+			);
+			path = RandomNumberGeneratorUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		41A86A832023D3EB00A5E863 /* RandomNumberGenerator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41A86AAE2023D3EB00A5E863 /* Build configuration list for PBXNativeTarget "RandomNumberGenerator" */;
+			buildPhases = (
+				41A86A802023D3EB00A5E863 /* Sources */,
+				41A86A812023D3EB00A5E863 /* Frameworks */,
+				41A86A822023D3EB00A5E863 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RandomNumberGenerator;
+			productName = RandomNumberGenerator;
+			productReference = 41A86A842023D3EB00A5E863 /* RandomNumberGenerator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		41A86A992023D3EB00A5E863 /* RandomNumberGeneratorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41A86AB12023D3EB00A5E863 /* Build configuration list for PBXNativeTarget "RandomNumberGeneratorTests" */;
+			buildPhases = (
+				41A86A962023D3EB00A5E863 /* Sources */,
+				41A86A972023D3EB00A5E863 /* Frameworks */,
+				41A86A982023D3EB00A5E863 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				41A86A9C2023D3EB00A5E863 /* PBXTargetDependency */,
+			);
+			name = RandomNumberGeneratorTests;
+			productName = RandomNumberGeneratorTests;
+			productReference = 41A86A9A2023D3EB00A5E863 /* RandomNumberGeneratorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		41A86AA42023D3EB00A5E863 /* RandomNumberGeneratorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41A86AB42023D3EB00A5E863 /* Build configuration list for PBXNativeTarget "RandomNumberGeneratorUITests" */;
+			buildPhases = (
+				41A86AA12023D3EB00A5E863 /* Sources */,
+				41A86AA22023D3EB00A5E863 /* Frameworks */,
+				41A86AA32023D3EB00A5E863 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				41A86AA72023D3EB00A5E863 /* PBXTargetDependency */,
+			);
+			name = RandomNumberGeneratorUITests;
+			productName = RandomNumberGeneratorUITests;
+			productReference = 41A86AA52023D3EB00A5E863 /* RandomNumberGeneratorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		41A86A7C2023D3EB00A5E863 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "Nikita Govind";
+				TargetAttributes = {
+					41A86A832023D3EB00A5E863 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					41A86A992023D3EB00A5E863 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 41A86A832023D3EB00A5E863;
+					};
+					41A86AA42023D3EB00A5E863 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 41A86A832023D3EB00A5E863;
+					};
+				};
+			};
+			buildConfigurationList = 41A86A7F2023D3EB00A5E863 /* Build configuration list for PBXProject "RandomNumberGenerator" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 41A86A7B2023D3EB00A5E863;
+			productRefGroup = 41A86A852023D3EB00A5E863 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				41A86A832023D3EB00A5E863 /* RandomNumberGenerator */,
+				41A86A992023D3EB00A5E863 /* RandomNumberGeneratorTests */,
+				41A86AA42023D3EB00A5E863 /* RandomNumberGeneratorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		41A86A822023D3EB00A5E863 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41A86A8E2023D3EB00A5E863 /* Assets.xcassets in Resources */,
+				41A86AB82023D97A00A5E863 /* howTo.txt in Resources */,
+				41A86A912023D3EB00A5E863 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41A86A982023D3EB00A5E863 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41A86AA32023D3EB00A5E863 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		41A86A802023D3EB00A5E863 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41A86A892023D3EB00A5E863 /* AppDelegate.m in Sources */,
+				41A86A942023D3EB00A5E863 /* main.m in Sources */,
+				41A86ABB2023DEE800A5E863 /* RandomController.m in Sources */,
+				41A86A8C2023D3EB00A5E863 /* RandomNumberGenerator.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41A86A962023D3EB00A5E863 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41A86A9F2023D3EB00A5E863 /* RandomNumberGeneratorTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41A86AA12023D3EB00A5E863 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41A86AAA2023D3EB00A5E863 /* RandomNumberGeneratorUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		41A86A9C2023D3EB00A5E863 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 41A86A832023D3EB00A5E863 /* RandomNumberGenerator */;
+			targetProxy = 41A86A9B2023D3EB00A5E863 /* PBXContainerItemProxy */;
+		};
+		41A86AA72023D3EB00A5E863 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 41A86A832023D3EB00A5E863 /* RandomNumberGenerator */;
+			targetProxy = 41A86AA62023D3EB00A5E863 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		41A86A8F2023D3EB00A5E863 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				41A86A902023D3EB00A5E863 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		41A86AAC2023D3EB00A5E863 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		41A86AAD2023D3EB00A5E863 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		41A86AAF2023D3EB00A5E863 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RandomNumberGenerator/RandomNumberGenerator.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = RandomNumberGenerator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = None.RandomNumberGenerator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		41A86AB02023D3EB00A5E863 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RandomNumberGenerator/RandomNumberGenerator.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = RandomNumberGenerator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = None.RandomNumberGenerator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		41A86AB22023D3EB00A5E863 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = RandomNumberGeneratorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = None.RandomNumberGeneratorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RandomNumberGenerator.app/Contents/MacOS/RandomNumberGenerator";
+			};
+			name = Debug;
+		};
+		41A86AB32023D3EB00A5E863 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = RandomNumberGeneratorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = None.RandomNumberGeneratorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RandomNumberGenerator.app/Contents/MacOS/RandomNumberGenerator";
+			};
+			name = Release;
+		};
+		41A86AB52023D3EB00A5E863 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = RandomNumberGeneratorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = None.RandomNumberGeneratorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = RandomNumberGenerator;
+			};
+			name = Debug;
+		};
+		41A86AB62023D3EB00A5E863 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = RandomNumberGeneratorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = None.RandomNumberGeneratorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = RandomNumberGenerator;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		41A86A7F2023D3EB00A5E863 /* Build configuration list for PBXProject "RandomNumberGenerator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41A86AAC2023D3EB00A5E863 /* Debug */,
+				41A86AAD2023D3EB00A5E863 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		41A86AAE2023D3EB00A5E863 /* Build configuration list for PBXNativeTarget "RandomNumberGenerator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41A86AAF2023D3EB00A5E863 /* Debug */,
+				41A86AB02023D3EB00A5E863 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		41A86AB12023D3EB00A5E863 /* Build configuration list for PBXNativeTarget "RandomNumberGeneratorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41A86AB22023D3EB00A5E863 /* Debug */,
+				41A86AB32023D3EB00A5E863 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		41A86AB42023D3EB00A5E863 /* Build configuration list for PBXNativeTarget "RandomNumberGeneratorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41A86AB52023D3EB00A5E863 /* Debug */,
+				41A86AB62023D3EB00A5E863 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		41A86A8A2023D3EB00A5E863 /* RandomNumberGenerator.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				41A86A8B2023D3EB00A5E863 /* RandomNumberGenerator.xcdatamodel */,
+			);
+			currentVersion = 41A86A8B2023D3EB00A5E863 /* RandomNumberGenerator.xcdatamodel */;
+			path = RandomNumberGenerator.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 41A86A7C2023D3EB00A5E863 /* Project object */;
+}

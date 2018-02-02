@@ -1,0 +1,72 @@
+1. New Project -> Cocoa app
+
+* XIB (XML Interface Builder) and NIB (NeXT Interface Builder):
+- A XIB file is an XML representation of user interface objects and their connections.
+- When you build your application, the XIB file is archived and compiled into a NIB file.
+(The XIB file is easier to work with, particularly for source control, but the NIB file is smaller and easier to parse, which is why the file that ships with your application is a NIB. )
+- Generally speaking, you will manipulate only XIB files, and your application will use only NIB files, but most developers use the words XIB and NIB interchangeably.
+
+2. Open XIB -> IB builder dock, select WIndow
+=> Now your window is visible on the canvas
+Add 2 buttons, 1 label. Name them as seen in the app
+
+* The dock in the IB (Left to the canvas)
+- This contaisn visible objects (like the buttons and labels we add) as well as Invisible objects (Like File's owner, First Responder, etc)
+
+- File's owner:
+-- Here it is the NSApplication object.
+-- The NSApplication object takes events from the event queue and forwards them to the appropriate window.
+
+3. Add controller classes for the actions of the buttons ie. create a interface and implementation file: RandomController.h and RandomController.m
+
+4. add instance variables and methods to your class.
+----------------------
+       CLASS
+-----------------------
+--> Variable (OUTLET)
+Point to an object
+1. resultTextField
+
+--> Method (ACTION)
+What the user's action was
+1. randomlyGenerateNumber
+2. randomlyGenerateNumberBasedOffTime
+
+Write the method definitions in the implementation files.
+
+5. Create an instance/object of class RandomGenerator in the XIB
+- add Object
+- Identity Inspector - CUstom Class name - RandomController
+- Now the Connections Inspector will show the Outlet and the actions
+
+6. Add connections
+
+-----------------------------------------                 --------------------------------------------------
+   CONTROLLER CLASS (RandomController)                                   UI OBJECTS
+-----------------------------------------                 --------------------------------------------------
+(2)  method randomlyGenerateNumber is called  <----------      (1) NSButton:RandomGenerateButton when clicked
+              |
+              |
+              ~
+(3) result in stored in resultTextField property ---------->   (4) Displayed in NSTextField: ResultTextField
+
+Step 1: Cntrl + Drag NSButton:RandomGenerateButton to the RandomController object -> Selct method randomlyGenerateNumber.
+(Similarly for the second button)
+
+Step 2: Right click on RandomController class object. Drag the Outlet resultTestField to the NSTextField: ResultTextField
+Therefore, we set the pointer *resultTestField to point to the NSTextField instance called ResultTextField
+
+7. Run. Yahooooo! A working Cocoa app.
+
+8. Issue: When app starts, the NSTextField shows the field name we labelled as "Result". Instead, make it display just the current time.
+- Solution: awakeFromNib
+
+9. Check out the entire App event cycle in main.m
+
+10. Run and check out the console output:
+2018-02-01 18:12:23.885092-0800 RandomNumberGenerator[6191:1239886] NIKITA: App is starting
+2018-02-01 18:12:23.983869-0800 RandomNumberGenerator[6191:1239886] NIKITA: awakeFromNib AUTO method called
+2018-02-01 18:12:31.264455-0800 RandomNumberGenerator[6191:1239886] NIKITA: randomlyGenerateNumber method called = 84
+2018-02-01 18:12:33.244356-0800 RandomNumberGenerator[6191:1239886] NIKITA: randomlyGenerateNumberBasedOffTime method called
+2018-02-01 18:12:39.983028-0800 RandomNumberGenerator[6191:1239886] NIKITA: App terminated by user
+
