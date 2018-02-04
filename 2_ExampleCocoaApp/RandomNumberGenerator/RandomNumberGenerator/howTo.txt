@@ -41,14 +41,15 @@ Write the method definitions in the implementation files.
 
 6. Add connections
 
------------------------------------------                 --------------------------------------------------
-   CONTROLLER CLASS (RandomController)                                   UI OBJECTS
------------------------------------------                 --------------------------------------------------
-(2)  method randomlyGenerateNumber is called  <----------      (1) NSButton:RandomGenerateButton when clicked
+-----------------------------------------                                                                                   --------------------------------------------------
+   CONTROLLER CLASS (RandomController)                                                                                                     UI OBJECTS
+-----------------------------------------                                                                                   --------------------------------------------------
+                                                          Call ACTION method on the TARGET object (RandomController)
+(2)  Action method randomlyGenerateNumber is called   <------------------------------------------------------------         (1) NSButton:RandomGenerateButton when clicked
               |
               |
               ~
-(3) result in stored in resultTextField property ---------->   (4) Displayed in NSTextField: ResultTextField
+(3) result in stored in resultTextField property      ---------------------------------------------------------------->      (4) Displayed in NSTextField: ResultTextField
 
 Step 1: Cntrl + Drag NSButton:RandomGenerateButton to the RandomController object -> Selct method randomlyGenerateNumber.
 (Similarly for the second button)
