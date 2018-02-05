@@ -1,0 +1,70 @@
+1. KVC
+
+- Reading the value of a variable using its name as a key
+- The methods setValue:forKey: and valueForKey: are defined in NSObject.
+- Example:
+
+@interface Student : NSObject
+{
+    NSString *firstName;
+}
+...
+@end
+
+---
+
+Student *s = [[Student alloc] init];
+[s setValue:@"Larry" forKey:@"firstName"]; // KVC write
+NSString *x = [s valueForKey:@"firstName"]; // KVC read
+
+2. Make new cocoa application.
+Add a property int. Use KVC to write and read it in the init method.
+
+3. Use a NSSlider to exhibit bindings: Tell it to talk to AppDelegate object and bind to fido's value
+- When you bind a key, such as fido, to an attribute of a graphical object, such as its value or its font color, the view will automatically keep those in sync using KVC.
+
+- Add a NSSLider
+- Change its attributes to Continuous. Uncheck Selected.
+- In the bindings, under Value -> Value (not Max or Min)
+bind to the AppDelegate Object, change the Model key path to self.fido
+
+Run:
+2018-02-04 23:50:28.755277-0800 KVCFun[7014:1450164] -setFido: is called with 5
+2018-02-04 23:50:28.755332-0800 KVCFun[7014:1450164] -fido is returning 5
+2018-02-04 23:50:28.755360-0800 KVCFun[7014:1450164] fido = 5
+2018-02-04 23:50:28.796546-0800 KVCFun[7014:1450164] -fido is returning 5
+2018-02-04 23:50:32.775832-0800 KVCFun[7014:1450164] -setFido: is called with 5
+2018-02-04 23:50:43.362320-0800 KVCFun[7014:1450164] -setFido: is called with 23
+
+So basically, whenever the slider value changes, fido will be updated.
+
+3. What happens if fido is changed by something other than the slider? How would the slider know that it has a new value?
+- The slider in turn is observing Fido. If fido is changed by any accessor method or KVC, the AppDelegate will send a message to slider saying fido has changed
+
+- Add a label. bind it to AppDelegate and change the Model key path to self.fido
+2018-02-04 23:56:38.732060-0800 KVCFun[7052:1464673] -setFido: is called with 5
+2018-02-04 23:56:38.732111-0800 KVCFun[7052:1464673] -fido is returning 5
+2018-02-04 23:56:38.732140-0800 KVCFun[7052:1464673] fido = 5
+2018-02-04 23:56:38.768926-0800 KVCFun[7052:1464673] -fido is returning 5
+2018-02-04 23:56:38.769335-0800 KVCFun[7052:1464673] -fido is returning 5
+2018-02-04 23:56:40.446807-0800 KVCFun[7052:1464673] -setFido: is called with 5 // whenever slider moves
+2018-02-04 23:56:40.446878-0800 KVCFun[7052:1464673] -fido is returning 5 // label reads the value
+2018-02-04 23:56:40.457850-0800 KVCFun[7052:1464673] -setFido: is called with 6
+2018-02-04 23:56:40.457899-0800 KVCFun[7052:1464673] -fido is returning 6
+2018-02-04 23:56:40.469108-0800 KVCFun[7052:1464673] -setFido: is called with 7
+2018-02-04 23:56:40.469150-0800 KVCFun[7052:1464673] -fido is returning 7
+2018-02-04 23:56:40.480290-0800 KVCFun[7052:1464673] -setFido: is called with 10
+2018-02-04 23:56:40.480327-0800 KVCFun[7052:1464673] -fido is returning 10
+2018-02-04 23:56:40.491371-0800 KVCFun[7052:1464673] -setFido: is called with 13
+
+4. What happens if you increment fido using a method?
+
+- Add a NSButton. Name it Fido
+Add a method called (IBAction) incrementFido. Cntrl + Drag button to Delegate object and select action incrementFido. Implement incrementFido.
+
+Now hitting this button increments Fido. But the calue of slider doesnt budge.
+
+If you are going to change the variable directly, you will need to explicitly trigger the notification of the observers. Change the incrementFido: method:
+ [self willChangeValueForKey:@"fido"];
+[self didChangeValueForKey:@"fido"];
+(2 other solutions too)
