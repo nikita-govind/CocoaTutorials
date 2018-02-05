@@ -1,0 +1,582 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		583EC8EB202797BC008C6E96 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 583EC8EA202797BC008C6E96 /* AppDelegate.m */; };
+		583EC8EE202797BC008C6E96 /* SpeechToTextConverter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 583EC8EC202797BC008C6E96 /* SpeechToTextConverter.xcdatamodeld */; };
+		583EC8F0202797BD008C6E96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 583EC8EF202797BD008C6E96 /* Assets.xcassets */; };
+		583EC8F3202797BD008C6E96 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 583EC8F1202797BD008C6E96 /* MainMenu.xib */; };
+		583EC8F6202797BD008C6E96 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 583EC8F5202797BD008C6E96 /* main.m */; };
+		583EC901202797BD008C6E96 /* SpeechToTextConverterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 583EC900202797BD008C6E96 /* SpeechToTextConverterTests.m */; };
+		583EC90C202797BD008C6E96 /* SpeechToTextConverterUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 583EC90B202797BD008C6E96 /* SpeechToTextConverterUITests.m */; };
+		583EC91A202797FC008C6E96 /* howto.txt in Resources */ = {isa = PBXBuildFile; fileRef = 583EC919202797FC008C6E96 /* howto.txt */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		583EC8FD202797BD008C6E96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 583EC8DE202797BC008C6E96 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 583EC8E5202797BC008C6E96;
+			remoteInfo = SpeechToTextConverter;
+		};
+		583EC908202797BD008C6E96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 583EC8DE202797BC008C6E96 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 583EC8E5202797BC008C6E96;
+			remoteInfo = SpeechToTextConverter;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		583EC8E6202797BC008C6E96 /* SpeechToTextConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeechToTextConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		583EC8E9202797BC008C6E96 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		583EC8EA202797BC008C6E96 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		583EC8ED202797BC008C6E96 /* SpeechToTextConverter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SpeechToTextConverter.xcdatamodel; sourceTree = "<group>"; };
+		583EC8EF202797BD008C6E96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		583EC8F2202797BD008C6E96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		583EC8F4202797BD008C6E96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		583EC8F5202797BD008C6E96 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		583EC8F7202797BD008C6E96 /* SpeechToTextConverter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SpeechToTextConverter.entitlements; sourceTree = "<group>"; };
+		583EC8FC202797BD008C6E96 /* SpeechToTextConverterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeechToTextConverterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		583EC900202797BD008C6E96 /* SpeechToTextConverterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpeechToTextConverterTests.m; sourceTree = "<group>"; };
+		583EC902202797BD008C6E96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		583EC907202797BD008C6E96 /* SpeechToTextConverterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeechToTextConverterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		583EC90B202797BD008C6E96 /* SpeechToTextConverterUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpeechToTextConverterUITests.m; sourceTree = "<group>"; };
+		583EC90D202797BD008C6E96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		583EC919202797FC008C6E96 /* howto.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = howto.txt; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		583EC8E3202797BC008C6E96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		583EC8F9202797BD008C6E96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		583EC904202797BD008C6E96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		583EC8DD202797BC008C6E96 = {
+			isa = PBXGroup;
+			children = (
+				583EC8E8202797BC008C6E96 /* SpeechToTextConverter */,
+				583EC8FF202797BD008C6E96 /* SpeechToTextConverterTests */,
+				583EC90A202797BD008C6E96 /* SpeechToTextConverterUITests */,
+				583EC8E7202797BC008C6E96 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		583EC8E7202797BC008C6E96 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				583EC8E6202797BC008C6E96 /* SpeechToTextConverter.app */,
+				583EC8FC202797BD008C6E96 /* SpeechToTextConverterTests.xctest */,
+				583EC907202797BD008C6E96 /* SpeechToTextConverterUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		583EC8E8202797BC008C6E96 /* SpeechToTextConverter */ = {
+			isa = PBXGroup;
+			children = (
+				583EC919202797FC008C6E96 /* howto.txt */,
+				583EC8E9202797BC008C6E96 /* AppDelegate.h */,
+				583EC8EA202797BC008C6E96 /* AppDelegate.m */,
+				583EC8EF202797BD008C6E96 /* Assets.xcassets */,
+				583EC8F1202797BD008C6E96 /* MainMenu.xib */,
+				583EC8F4202797BD008C6E96 /* Info.plist */,
+				583EC8F5202797BD008C6E96 /* main.m */,
+				583EC8F7202797BD008C6E96 /* SpeechToTextConverter.entitlements */,
+				583EC8EC202797BC008C6E96 /* SpeechToTextConverter.xcdatamodeld */,
+			);
+			path = SpeechToTextConverter;
+			sourceTree = "<group>";
+		};
+		583EC8FF202797BD008C6E96 /* SpeechToTextConverterTests */ = {
+			isa = PBXGroup;
+			children = (
+				583EC900202797BD008C6E96 /* SpeechToTextConverterTests.m */,
+				583EC902202797BD008C6E96 /* Info.plist */,
+			);
+			path = SpeechToTextConverterTests;
+			sourceTree = "<group>";
+		};
+		583EC90A202797BD008C6E96 /* SpeechToTextConverterUITests */ = {
+			isa = PBXGroup;
+			children = (
+				583EC90B202797BD008C6E96 /* SpeechToTextConverterUITests.m */,
+				583EC90D202797BD008C6E96 /* Info.plist */,
+			);
+			path = SpeechToTextConverterUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		583EC8E5202797BC008C6E96 /* SpeechToTextConverter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 583EC910202797BD008C6E96 /* Build configuration list for PBXNativeTarget "SpeechToTextConverter" */;
+			buildPhases = (
+				583EC8E2202797BC008C6E96 /* Sources */,
+				583EC8E3202797BC008C6E96 /* Frameworks */,
+				583EC8E4202797BC008C6E96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SpeechToTextConverter;
+			productName = SpeechToTextConverter;
+			productReference = 583EC8E6202797BC008C6E96 /* SpeechToTextConverter.app */;
+			productType = "com.apple.product-type.application";
+		};
+		583EC8FB202797BD008C6E96 /* SpeechToTextConverterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 583EC913202797BD008C6E96 /* Build configuration list for PBXNativeTarget "SpeechToTextConverterTests" */;
+			buildPhases = (
+				583EC8F8202797BD008C6E96 /* Sources */,
+				583EC8F9202797BD008C6E96 /* Frameworks */,
+				583EC8FA202797BD008C6E96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				583EC8FE202797BD008C6E96 /* PBXTargetDependency */,
+			);
+			name = SpeechToTextConverterTests;
+			productName = SpeechToTextConverterTests;
+			productReference = 583EC8FC202797BD008C6E96 /* SpeechToTextConverterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		583EC906202797BD008C6E96 /* SpeechToTextConverterUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 583EC916202797BD008C6E96 /* Build configuration list for PBXNativeTarget "SpeechToTextConverterUITests" */;
+			buildPhases = (
+				583EC903202797BD008C6E96 /* Sources */,
+				583EC904202797BD008C6E96 /* Frameworks */,
+				583EC905202797BD008C6E96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				583EC909202797BD008C6E96 /* PBXTargetDependency */,
+			);
+			name = SpeechToTextConverterUITests;
+			productName = SpeechToTextConverterUITests;
+			productReference = 583EC907202797BD008C6E96 /* SpeechToTextConverterUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		583EC8DE202797BC008C6E96 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = WhatsOnTheMainThread;
+				TargetAttributes = {
+					583EC8E5202797BC008C6E96 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					583EC8FB202797BD008C6E96 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 583EC8E5202797BC008C6E96;
+					};
+					583EC906202797BD008C6E96 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 583EC8E5202797BC008C6E96;
+					};
+				};
+			};
+			buildConfigurationList = 583EC8E1202797BC008C6E96 /* Build configuration list for PBXProject "SpeechToTextConverter" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 583EC8DD202797BC008C6E96;
+			productRefGroup = 583EC8E7202797BC008C6E96 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				583EC8E5202797BC008C6E96 /* SpeechToTextConverter */,
+				583EC8FB202797BD008C6E96 /* SpeechToTextConverterTests */,
+				583EC906202797BD008C6E96 /* SpeechToTextConverterUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		583EC8E4202797BC008C6E96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				583EC8F0202797BD008C6E96 /* Assets.xcassets in Resources */,
+				583EC91A202797FC008C6E96 /* howto.txt in Resources */,
+				583EC8F3202797BD008C6E96 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		583EC8FA202797BD008C6E96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		583EC905202797BD008C6E96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		583EC8E2202797BC008C6E96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				583EC8EE202797BC008C6E96 /* SpeechToTextConverter.xcdatamodeld in Sources */,
+				583EC8F6202797BD008C6E96 /* main.m in Sources */,
+				583EC8EB202797BC008C6E96 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		583EC8F8202797BD008C6E96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				583EC901202797BD008C6E96 /* SpeechToTextConverterTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		583EC903202797BD008C6E96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				583EC90C202797BD008C6E96 /* SpeechToTextConverterUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		583EC8FE202797BD008C6E96 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 583EC8E5202797BC008C6E96 /* SpeechToTextConverter */;
+			targetProxy = 583EC8FD202797BD008C6E96 /* PBXContainerItemProxy */;
+		};
+		583EC909202797BD008C6E96 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 583EC8E5202797BC008C6E96 /* SpeechToTextConverter */;
+			targetProxy = 583EC908202797BD008C6E96 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		583EC8F1202797BD008C6E96 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				583EC8F2202797BD008C6E96 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		583EC90E202797BD008C6E96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		583EC90F202797BD008C6E96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		583EC911202797BD008C6E96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SpeechToTextConverter/SpeechToTextConverter.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SpeechToTextConverter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = WhatsOnTheMainThread.SpeechToTextConverter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		583EC912202797BD008C6E96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SpeechToTextConverter/SpeechToTextConverter.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SpeechToTextConverter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = WhatsOnTheMainThread.SpeechToTextConverter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		583EC914202797BD008C6E96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SpeechToTextConverterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = WhatsOnTheMainThread.SpeechToTextConverterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpeechToTextConverter.app/Contents/MacOS/SpeechToTextConverter";
+			};
+			name = Debug;
+		};
+		583EC915202797BD008C6E96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SpeechToTextConverterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = WhatsOnTheMainThread.SpeechToTextConverterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpeechToTextConverter.app/Contents/MacOS/SpeechToTextConverter";
+			};
+			name = Release;
+		};
+		583EC917202797BD008C6E96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SpeechToTextConverterUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = WhatsOnTheMainThread.SpeechToTextConverterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SpeechToTextConverter;
+			};
+			name = Debug;
+		};
+		583EC918202797BD008C6E96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SpeechToTextConverterUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = WhatsOnTheMainThread.SpeechToTextConverterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SpeechToTextConverter;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		583EC8E1202797BC008C6E96 /* Build configuration list for PBXProject "SpeechToTextConverter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				583EC90E202797BD008C6E96 /* Debug */,
+				583EC90F202797BD008C6E96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		583EC910202797BD008C6E96 /* Build configuration list for PBXNativeTarget "SpeechToTextConverter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				583EC911202797BD008C6E96 /* Debug */,
+				583EC912202797BD008C6E96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		583EC913202797BD008C6E96 /* Build configuration list for PBXNativeTarget "SpeechToTextConverterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				583EC914202797BD008C6E96 /* Debug */,
+				583EC915202797BD008C6E96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		583EC916202797BD008C6E96 /* Build configuration list for PBXNativeTarget "SpeechToTextConverterUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				583EC917202797BD008C6E96 /* Debug */,
+				583EC918202797BD008C6E96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		583EC8EC202797BC008C6E96 /* SpeechToTextConverter.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				583EC8ED202797BC008C6E96 /* SpeechToTextConverter.xcdatamodel */,
+			);
+			currentVersion = 583EC8ED202797BC008C6E96 /* SpeechToTextConverter.xcdatamodel */;
+			path = SpeechToTextConverter.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 583EC8DE202797BC008C6E96 /* Project object */;
+}

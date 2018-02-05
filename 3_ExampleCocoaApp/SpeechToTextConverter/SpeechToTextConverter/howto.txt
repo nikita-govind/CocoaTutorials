@@ -1,0 +1,289 @@
+1. Hierarchy of cocoa classes
+
+                                                    CLASS: NSObject (The actual parent object - so the class will contain methods init, retain, release, dealloc)
+                                                        ^
+                                                        | Inherits from
+
+                                                    CLASS: NSResponder (Handles events - mouse clicks, keyboard inputs)
+                                                        ^
+                                                        | Inherits from
+
+                                    CLASS: NSView            CLASS: NSWindow (Appears in a window - draw rect, window)
+                                                        ^
+                                                        | Inherits from
+
+                                    CLASS: NSControl (Has a target and an action: setTarget, setAction)
+                                                        ^
+                                                        | Inherits from
+
+                                    CLASS: NSButton     CLASS: NSTextField      CLASS: NSSlider etc
+
+
+2. Common NSControl classes:
+
+a. NSButton (or even checkboxes)
+- (void)setEnabled:(BOOL)yn
+- (NSInteger)state
+- (void)setState:(NSInteger)aState
+
+b. NSSLider
+- (void)setFloatValue:(float)x // Move the slider to x
+- (float)floatValue // current value of slider
+
+c. NSTextField
+- FIrst will show the placeholder string.
+If text field is empty, it will show placeholder sting in grey
+- (NSString *)stringValue
+- (void)setStringValue:(NSString *)aString
+- (NSObject *)objectValue // To set as an arbitary object
+- (void)setObjectValue:(NSObject *)obj
+Eg. Allow you to get and set the data being displayed in the text field as an arbitrary object type. This behavior is helpful if you are using a formatter. NSFormatters are responsible for converting a string into another type, and vice versa. If no formatter is present, these methods use the description method.
+
+For example, you might use a text field to allow the user to type in a date. As the programmer, you don’t want the string that the user typed in; you want an instance of NSDate. By attaching an NSDateFormatter, you ensure that the text field’s objectValue method will return an NSDate. Also, when you call setObjectValue: with an NSDate, the NSDateFormatter will format it as a string for the user.
+
+d. Search Field
+e. Segmented control
+f. Pop up button
+g. Combobox
+h. Color well
+horizonatl slider
+circular slider
+- horixzontal progress indicator
+- async arrows
+navigation bar path control widget
+discrete level indicator
+disclosure
+image well
+token field
+
+3. STart making the app:
+In XIB file, window -> Place 2 buttons and 1 textfield box. Rename them appropriately.
+
+4. This time we use the AppDelegate class (App Delegate.h and .m) that xcode created and do not make separate controller classes.
+With the XIB open, enable the Assistant Editor on the top right.
+
+5. When the user hits start or stop button, we need it to call methods like startIt: or stopIt:
+So make these connections first.
+Cntrl drag the NSButton StopButton to the AppDelegate.h and add [ COnnection: Action/ object: Delegate/ name: stopIt:/ type: id ]
+We will get a method like this - (IBAction)stopIt:(id)sender;
+
+This avoids the 2 step process we did earlier: make a method - (IBAction)stopIt:(id)sender;
+then add object controllerCLass to the XIB, then connect the NSButton Stop to the action of this class stopIt.
+
+Do same for startIt
+
+6. On hitting the NSButtons: Start/Stop, the ACTION performed is AppDelegate-startIt method. The target it needs to read is the NSTextField.
+So we need an IBOutlet for the NSTextField.
+
+Cntrl + Drag the NSTextfield to AppDelegate.h and add [Controller: Outlet/ object: Delegate/ name: inputText / type: NSTextField]
+This will add a property to the class like @property (weak) IBOutlet NSTextField *inputText;
+Add thesynthesize in .m : @synthesize inputText;
+
+7. Run the application. See if the methods are workign with log lines.
+
+NSWindow’s initialFirstResponder Outlet:
+When your application runs and the new window appears, users should not have to click on a text field before they type. You can tell the window which view should be receiving keyboard events when the window appears. Control-click on the window icon in the Interface Builder dock to get its Connection panel. Drag from initialFirstResponder to the text field.
+
+8. Now we do the speechsynthesizer:
+
+a. @property ()  NSSpeechSynthesizer *speechSynth; + add syntehsize
+b. add an init to the class
+c. Add content to speakIt and stopIt classes
+
+9. Output :
+2018-02-04 13:07:58.693507-0800 SpeechToTextConverter[5874:995789] NIKITA: Delegate class object is inited
+2018-02-04 13:08:12.009997-0800 SpeechToTextConverter[5874:995789] NIKITA: startIt method called
+2018-02-04 13:08:12.010113-0800 SpeechToTextConverter[5874:995789] NIKITA: startIt method called: this is the string - Yo Yo Honey Singh
+2018-02-04 13:08:12.017213-0800 SpeechToTextConverter[5874:995789] NIKITA: Have started to say: Yo Yo Honey Singh
+2018-02-04 13:08:14.653608-0800 SpeechToTextConverter[5874:995789] NIKITA: startIt method called
+2018-02-04 13:08:14.653710-0800 SpeechToTextConverter[5874:995789] NIKITA: startIt method called: this is the string - Yo Yo Honey Singh
+2018-02-04 13:08:14.656771-0800 SpeechToTextConverter[5874:995789] NIKITA: Have started to say: Yo Yo Honey Singh
+2018-02-04 13:08:15.497367-0800 SpeechToTextConverter[5874:995789] NIKITA: stopIt method called
+2018-02-04 13:08:19.574031-0800 SpeechToTextConverter[5874:995789] NIKITA: Application terminated
+
+10. Like the Delegate object, Main Menu is also an object. We can add Target/action for everything in Main Menu as well according to our needs.
+
+11. When we make a connection by CNtrl dragging a NSButton to an action, we are basically calling NSController class' - (void)setAction:(SEL)aSelector
+
+But how would you get a selector? The Objective-C compiler directive @selector will tell the compiler to look up the selector for you. For example, to set the action of a button to the method drawMickey:, you could do the following:
+
+SEL mySelector;
+mySelector = @selector(drawMickey:);
+[myButton setAction:mySelector];
+
+At compile time, @selector(drawMickey:) will be replaced by the selector for drawMickey:.
+
+If you needed to find a selector for an NSString at runtime, you could use the function NSSelectorFromString():
+
+SEL mySelector;
+mySelector = NSSelectorFromString(@"drawMickey:");
+[myButton setTarget:someObjectWithADrawMickeyMethod];
+[myButton setAction:mySelector];
+
+12. Now we use Delegate methods.
+
+Ideally, what we wnat is
+- when the Text is being converted to Speech, we want the Speakbutton to be Greyed out.
+- And when not speaking, we want the Stop to be greyed out
+- When there is no text at all, we want both Speak and Stop greyed out.
+
+All Cocoa objects have delegate methods:
+Eg. NSSpeechSynthesizer has these delegate methods: didFinishSpeaking, willSpeakWord:ofString: , etc.
+
+
+            TARGET Action       CLASS: AppDelegate
+NSButton  --------------->  |   startIt:                        |   OUTLET
+Speak                       |                                   |   --------->  NSTextField
+            TARGET Action   |                                   |               InputTextField
+NSButton  --------------->  |   stopIt:                         |               -> stringValue
+Stop                        |                                   |               -> textColor / setTextColor
+                            |   changeTextcolor:                |
+                            |   speechSynth:didFinishSpeaking   |
+
+                                            |
+                                            |
+                                            |
+                                        DELEGATE
+                                    NSSpeechSynthesizer
+                                    startSpeakingString:
+                                    stopSpeakingString:
+
+First tell the compiler that AppDelegate conforms to the NSSpeechSynthesizerDelegate protocol.
+- In the AppDelegate.h, change
+@interface AppDelegate : NSObject <NSApplicationDelegate>
+to @interface AppDelegate : NSObject <NSApplicationDelegate, NSSpeechSynthesizerDelegate>
+
+Second, init the delegate
+- In init, add [speechSynth setDelegate:self];
+
+Third, add the delegate method
+- (void)speechSynthesizer:(NSSpeechSynthesizer *)sender
+didFinishSpeaking:(BOOL)finishedSpeaking
+
+Run the application. The delegate method will be called on 2 conditions:
+1. If the speak button is pressed and it speaks the entire text (here finishedSpeaking will be 1)
+2. When Stop button is pressed (here finishedSpeaking will be 0)
+* But this method will be called only if some speech is being spken.
+Without any speech, if you hit stop, this delegate method will not work.
+
+Initially, stop button should be greyed out. In StoButton -> Attributes-> Uncheck enabled.
+To control the rest of the times when the buttons should be enabled/disabled, we will need outlets for them. Add them.
+
+- when speakIt runs:
+[stopButton setEnabled:YES];
+[speakButton setEnabled:NO];
+
+- when speakit completes, it will call the delegeate didfinishSpeaking. So in that delegate method:
+[stopButton setEnabled:NO];
+[speakButton setEnabled:YES];
+
+- when speaking, if you hit stop, then also delegate method will be called. So it will again
+[stopButton setEnabled:NO];
+[speakButton setEnabled:YES];
+
+
+13. NSTableView and data source: To add a list of voices.
+
+                HELPER OBJECT called DataSource object
+NSTableView ------------------------------------->  The data source must conform to the NSTableDataSource informal protocol
+                                                    MEANS - data source source object should have these 2 methods:
+                                                    - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView;
+                                                    - (id)tableView:(NSTableView *)aTableView
+                                                    objectValueForTableColumn:(NSTableColumn *)aTableColumn
+                                                    row:(NSInteger)rowIndex;
+
+                                                    Helper data source here is AppDelegate
+
+Additional ones if needed:
+// If your tableView is editable
+- (void)tableView:(NSTableView *)aTableView
+setObjectValue:(id)anObject
+forTableColumn:(NSTableColumn *)aTableColumn
+row:(NSInteger)rowIndex;
+
+
+**Note that you are taking a very passive position in getting data to appear. Your data source will wait until the table view asks for the data. When they first work with NSTableView (or NSBrowser or NSOutlineView, which work in a very similar manner), most programmers want to boss the table view around and tell it, “You will display 7 in the third row in the fifth column.” It doesn’t work that way. When it is ready to display the third row and the fifth column, the table view will ask its dataSource for the object to display. Your class is its servant.How, then, will you get the table view to fetch updated information? You will tell the table view to reloadData. It will then reload all the cells that the user can see.
+
+
+
+            TARGET Action       CLASS: AppDelegate
+NSButton  --------------->  |   startIt:                        |   OUTLET
+Speak                       |                                   |   --------->  NSTextField
+            TARGET Action   |                                   |               InputTextField
+NSButton  --------------->  |   stopIt:                         |               -> stringValue
+Stop                        |                                   |               -> textColor / setTextColor
+                            |   changeTextcolor:                |
+                            |   speechSynth:didFinishSpeaking   |   DATA SOURCE
+                            |                                   |   <---------  NSTableView
+                            |                                   |               -> setEnabled
+                            |                                   |               -> selectRow:byExtendingSelection
+                            |                                   |               -> selectedRow
+                            |                                   |
+                            | __________________________________|   --------->  NSArray
+                                                                                voices
+                                            |
+                                            |
+                                            |
+                                        DELEGATE
+                                        NSSpeechSynthesizer
+                                        startSpeakingString:
+                                        stopSpeakingString:
+
+
+-> FIrst add array of voices and init it.
+-> Add a table View to xib. Select tabled view. Change content type -> cell view
+1 column, disable selection
+-> Change table header name to Voices
+-> CNtl click on TableView -> make connection of its outlet Data source to AppDelegate object
+-> Add an outlet for the TableView object in appDelegate.h
+-> Add the 2 necessary methods:
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView;
+- (id)tableView:(NSTableView *)aTableView
+objectValueForTableColumn:(NSTableColumn *)aTableColumn
+row:(NSInteger)rowIndex;
+
+-> Add delegate method for NSTableView:- (void)tableViewSelectionDidChange:(NSNotification *)notification
+How does NSTableView know that its delegate method lies in the AppDelegate class?
+It has a delegate outlet. Connect this Delegate outlet to the AppDelegate object.
+
+In startIt: [tableViewList setEnabled:NO];
+In stopIt: [tableViewList setEnabled:YES];
+In finishedSpeaking: [tableViewList setEnabled:YES];
+
+- awakeFromNib: have the first default selected
+
+14. Many objects have Delegates in Cocoa, very common design pattern
+
+NSAlert
+NSAnimation
+NSApplication
+NSBrowser
+NSDatePicker
+NSDrawer
+NSFontManager
+NSImage
+NSLayoutManager
+NSMatrix
+NSMenu
+NSPathControl
+NSRuleEditor
+NSSavePanel
+NSSound
+NSSpeechRecognizer
+NSSpeechSynthesizer
+NSSplitView
+NSTabView
+NSTableView
+NSText
+NSTextField
+NSTextStorage
+NSTextView
+NSTokenField
+NSToolbar
+NSWindow
+
+How do delegates work?
+
+A delegate object doesn't have to implement all the possible methods. But if the object does implement a delegate method, it will get called.
+
+// TO DO
