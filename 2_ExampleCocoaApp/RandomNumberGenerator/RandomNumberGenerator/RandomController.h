@@ -21,8 +21,8 @@
 @property (weak) IBOutlet NSTextField *resultTextField;
 
 /*
- * IBAction is the same as void. It just acts as a hint to Interface Builder that this is an actiona ssociated with a Cocoa object.
- * They always take the sender as an arg bec this tells the sender which control sent the message
+ * IBAction is the same as void. It just acts as a hint to Interface Builder that this is an action associated with a Cocoa object.
+ * They always take the sender(the Cocoa object ie NSButon,NSLabel) as an arg bec this tells the sender which control sent the message
  * Eg. where this info is important? If it is a Checkbox and the box value toggled say from Yes to NO
  * the checkbox button will be pointed to the action mehtod
  - (IBAction)toggleCheckbox:(id)sender
@@ -31,7 +31,6 @@
     BOOL isOn = [sender state];
     ...
  }
- 
  */
 - (IBAction) randomlyGenerateNumber: (id)sender;
 - (IBAction) randomlyGenerateNumberBasedOffTime    : (id)sender;

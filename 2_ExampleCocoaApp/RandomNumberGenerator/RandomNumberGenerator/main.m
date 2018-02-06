@@ -12,13 +12,27 @@ int main(int argc, const char * argv[])
 {
     NSLog(@"NIKITA: App is starting");
     return NSApplicationMain(argc, argv);
-    // Process is started -> runs method NSApplicationMAin -> Creates an instance of class NSApplication
-    // This NSApplication object reads the NIB file -> unarchives the objects in it -> classes are alloced, instances are inited -> instance variables are set (connections)
-    // Every object in the NIB file is sent message:awakeFromNIB
+
+    /*
+    1. Process is started
+    main.m: int main
     
+    2. Calls method NSApplicationMain, a startup function
+    Creates an instance of class NSApplication, should be called just once from main.m and on main thread
+    This NSApplication object reads the NIB file -> unarchives the objects in it
+    
+    3. Objects are created
+    Each object's classes are alloced, instances are inited, instance variables are set (connections)
+    
+    4. Every object in the NIB file is sent message:awakeFromNIB
+    awakeFromNib for all objects (RandomController, AppDelegate)
+        
+    5. AppDelegate.m:applicationDidFinishLaunching is called
+    We are ready to listen to user events
+     
     // MainEventLoop starts:
     // The NSApplication object waits for an User event.
-    /*
+    
      
      
      ----------------------------      |                    |
@@ -30,8 +44,9 @@ int main(int argc, const char * argv[])
      
      -> If your code changes the data in a view, the view is redisplayed -> again the NSApplication object picks up the next event from the queue and the loop continues
      
-     User chooses Quit from the menu, NSApp is sent the terminate: message.
-     
+     6. App terminates: User chooses Quit from the menu, NSApp is sent the terminate: message.
+     if CoreData: applicationShouldTerminate
+     then AppDelegate.m:applicationWillTerminate
      
      */
     

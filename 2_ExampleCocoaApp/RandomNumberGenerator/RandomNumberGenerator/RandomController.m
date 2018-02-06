@@ -37,7 +37,7 @@
 // After being brought to life but before any events are handled, all OBJECTS are automatically sent the message awakeFromNib. Add an awakeFromNib method to RandomGenerator that will initialize the text field’s value.
 - (void) awakeFromNib
 {
-    NSLog(@"NIKITA: awakeFromNib AUTO method called ");
+    NSLog(@"NIKITA: awakeFromNib AUTO method called for object RandomController");
     NSDate *now;
     now = [NSDate date];
     [resultTextField setObjectValue:now];

@@ -17,13 +17,20 @@
 
 @implementation AppDelegate
 
+- (void) awakeFromNib
+{
+    NSLog(@"NIKITA: awakeFromNib AUTO method called for AppDelegate");
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
+    NSLog(@"NIKITA: Application finished launching. Now awaiting user action.");
 }
 
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
+    NSLog(@"NIKITA: Application is done. Closed.");
 }
 
 

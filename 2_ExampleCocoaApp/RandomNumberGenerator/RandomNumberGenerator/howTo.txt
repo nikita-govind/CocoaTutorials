@@ -11,7 +11,7 @@
 Add 2 buttons, 1 label. Name them as seen in the app
 
 * The dock in the IB (Left to the canvas)
-- This contaisn visible objects (like the buttons and labels we add) as well as Invisible objects (Like File's owner, First Responder, etc)
+- This contains visible objects (like the buttons and labels we add) as well as Invisible objects (Like File's owner, First Responder, Delegate object, etc)
 
 - File's owner:
 -- Here it is the NSApplication object.
@@ -36,7 +36,7 @@ Write the method definitions in the implementation files.
 
 5. Create an instance/object of class RandomGenerator in the XIB
 - add Object
-- Identity Inspector - CUstom Class name - RandomController
+- Identity Inspector - Custom Class name - RandomController
 - Now the Connections Inspector will show the Outlet and the actions
 
 6. Add connections
@@ -54,7 +54,7 @@ Write the method definitions in the implementation files.
 Step 1: Cntrl + Drag NSButton:RandomGenerateButton to the RandomController object -> Selct method randomlyGenerateNumber.
 (Similarly for the second button)
 
-Step 2: Right click on RandomController class object. Drag the Outlet resultTestField to the NSTextField: ResultTextField
+Step 2: Right click on RandomController class object. Drag the Outlet resultTextField to the NSTextField: ResultTextField
 Therefore, we set the pointer *resultTestField to point to the NSTextField instance called ResultTextField
 
 7. Run. Yahooooo! A working Cocoa app.
@@ -65,9 +65,13 @@ Therefore, we set the pointer *resultTestField to point to the NSTextField insta
 9. Check out the entire App event cycle in main.m
 
 10. Run and check out the console output:
-2018-02-01 18:12:23.885092-0800 RandomNumberGenerator[6191:1239886] NIKITA: App is starting
-2018-02-01 18:12:23.983869-0800 RandomNumberGenerator[6191:1239886] NIKITA: awakeFromNib AUTO method called
-2018-02-01 18:12:31.264455-0800 RandomNumberGenerator[6191:1239886] NIKITA: randomlyGenerateNumber method called = 84
-2018-02-01 18:12:33.244356-0800 RandomNumberGenerator[6191:1239886] NIKITA: randomlyGenerateNumberBasedOffTime method called
-2018-02-01 18:12:39.983028-0800 RandomNumberGenerator[6191:1239886] NIKITA: App terminated by user
+2018-02-05 21:21:14.841799-0800 RandomNumberGenerator[7783:1668402] NIKITA: App is starting
+2018-02-05 21:21:14.926310-0800 RandomNumberGenerator[7783:1668402] NIKITA: awakeFromNib AUTO method called for object RandomController
+2018-02-05 21:21:14.926385-0800 RandomNumberGenerator[7783:1668402] NIKITA: awakeFromNib AUTO method called for AppDelegate
+2018-02-05 21:21:15.065340-0800 RandomNumberGenerator[7783:1668402] NIKITA: Application finished launching. Now awaiting user action.
+2018-02-05 21:21:19.080902-0800 RandomNumberGenerator[7783:1668402] NIKITA: randomlyGenerateNumber method called = 84
+2018-02-05 21:21:24.683539-0800 RandomNumberGenerator[7783:1668402] NIKITA: randomlyGenerateNumberBasedOffTime method called
+2018-02-05 21:21:31.414828-0800 RandomNumberGenerator[7783:1668402] NIKITA: App terminated by user
+2018-02-05 21:21:31.419171-0800 RandomNumberGenerator[7783:1668402] NIKITA: Application is done. Closed.
+
 
