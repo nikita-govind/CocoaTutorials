@@ -31,8 +31,8 @@ b. NSSLider
 - (float)floatValue // current value of slider
 
 c. NSTextField
-- FIrst will show the placeholder string.
-If text field is empty, it will show placeholder sting in grey
+- First will show the placeholder string.
+If text field is empty, it will show placeholder string in grey
 - (NSString *)stringValue
 - (void)setStringValue:(NSString *)aString
 - (NSObject *)objectValue // To set as an arbitary object
@@ -56,7 +56,7 @@ disclosure
 image well
 token field
 
-3. STart making the app:
+3. Start making the app:
 In XIB file, window -> Place 2 buttons and 1 textfield box. Rename them appropriately.
 
 4. This time we use the AppDelegate class (App Delegate.h and .m) that xcode created and do not make separate controller classes.
@@ -77,12 +77,14 @@ So we need an IBOutlet for the NSTextField.
 
 Cntrl + Drag the NSTextfield to AppDelegate.h and add [Controller: Outlet/ object: Delegate/ name: inputText / type: NSTextField]
 This will add a property to the class like @property (weak) IBOutlet NSTextField *inputText;
-Add thesynthesize in .m : @synthesize inputText;
+Add the synthesize in .m : @synthesize inputText;
 
 7. Run the application. See if the methods are workign with log lines.
 
 NSWindow’s initialFirstResponder Outlet:
 When your application runs and the new window appears, users should not have to click on a text field before they type. You can tell the window which view should be receiving keyboard events when the window appears. Control-click on the window icon in the Interface Builder dock to get its Connection panel. Drag from initialFirstResponder to the text field.
+
+NSWindow's window outlet will already be connected to object AppDelegate
 
 8. Now we do the speechsynthesizer:
 
@@ -103,7 +105,8 @@ c. Add content to speakIt and stopIt classes
 
 10. Like the Delegate object, Main Menu is also an object. We can add Target/action for everything in Main Menu as well according to our needs.
 
-11. When we make a connection by CNtrl dragging a NSButton to an action, we are basically calling NSController class' - (void)setAction:(SEL)aSelector
+11. How does this Cntrl + dragging to set an action on a Button work?
+When we make a connection by Cntrl dragging a NSButton to an action, we are basically calling NSController class' - (void)setAction:(SEL)aSelector
 
 But how would you get a selector? The Objective-C compiler directive @selector will tell the compiler to look up the selector for you. For example, to set the action of a button to the method drawMickey:, you could do the following:
 
@@ -111,8 +114,9 @@ SEL mySelector;
 mySelector = @selector(drawMickey:);
 [myButton setAction:mySelector];
 
-At compile time, @selector(drawMickey:) will be replaced by the selector for drawMickey:.
+At compile time, @selector(drawMickey:) will be replaced by the selector for drawMickey:. This is provided we have inited the object that contains drawMickey methiod (i.e here for example AppDelegate)
 
+But what if we want the selector for a method of a class that will be inited only at runtim?
 If you needed to find a selector for an NSString at runtime, you could use the function NSSelectorFromString():
 
 SEL mySelector;
@@ -122,7 +126,7 @@ mySelector = NSSelectorFromString(@"drawMickey:");
 
 12. Now we use Delegate methods.
 
-Ideally, what we wnat is
+Ideally, what we want is
 - when the Text is being converted to Speech, we want the Speakbutton to be Greyed out.
 - And when not speaking, we want the Stop to be greyed out
 - When there is no text at all, we want both Speak and Stop greyed out.
@@ -163,10 +167,10 @@ didFinishSpeaking:(BOOL)finishedSpeaking
 Run the application. The delegate method will be called on 2 conditions:
 1. If the speak button is pressed and it speaks the entire text (here finishedSpeaking will be 1)
 2. When Stop button is pressed (here finishedSpeaking will be 0)
-* But this method will be called only if some speech is being spken.
+* But this method will be called only if some speech is being spoken.
 Without any speech, if you hit stop, this delegate method will not work.
 
-Initially, stop button should be greyed out. In StoButton -> Attributes-> Uncheck enabled.
+Initially, stop button should be greyed out. In StopButton -> Attributes-> Uncheck enabled.
 To control the rest of the times when the buttons should be enabled/disabled, we will need outlets for them. Add them.
 
 - when speakIt runs:
@@ -231,7 +235,7 @@ Stop                        |                                   |               
 
 
 -> FIrst add array of voices and init it.
--> Add a table View to xib. Select tabled view. Change content type -> cell view
+-> Add a table View to xib. Select table view. Change content type -> cell view
 1 column, disable selection
 -> Change table header name to Voices
 -> CNtl click on TableView -> make connection of its outlet Data source to AppDelegate object
@@ -284,6 +288,31 @@ NSWindow
 
 How do delegates work?
 
-A delegate object doesn't have to implement all the possible methods. But if the object does implement a delegate method, it will get called.
+- A delegate object doesn't have to implement all the possible methods. But if the object does implement a delegate method, it will get called. If the delegate doesn’t implement the message, the default behavior happens.
+- Every NSObject has a method called - (BOOL)respondsToSelector:(SEL)aSelector (returns YES if the object has a method called aSelector)
+As every object inherits from NSObject, all object swill have this method.
 
-// TO DO
+- Say we have to implement the delegate method to change selection from one row of the NSTable view to another.
+
+// About to change to row "newSelectedRowIndex"
+
+// Set the default behavior
+BOOL ok = YES;
+
+// Check whether the delegate implements the method
+if ([delegate respondsToSelector:@selector(tableView:shouldSelectRow:)])
+{
+  // Execute the method
+  ok = [delegate tableView:self shouldSelectRow:newSelectedRowIndex];
+}
+
+// Use the return value
+if (ok)
+{
+    ...actually change the selection...
+}
+
+- (In reality, the result from respondsToSelector: is usually cached by the object with the delegate outlet. This makes performance considerably faster than would be implied by the code.)
+
+- If you wanted to see the checks for the existence of the delegate methods, you could override respondsToSelector: in your delegate object:
+- (BOOL)respondsToSelector:(SEL)aSelector

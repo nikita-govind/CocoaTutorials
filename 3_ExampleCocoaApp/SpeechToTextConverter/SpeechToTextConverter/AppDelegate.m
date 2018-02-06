@@ -102,7 +102,7 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
     return v;
 }
 
-//T ableView delegate method
+//TableView delegate method
 - (void)tableViewSelectionDidChange:(NSNotification *)notification
 {
     NSInteger row = [tableViewList selectedRow];
@@ -125,6 +125,7 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
     [tableViewList scrollRowToVisible:defaultRow];
 }
 
+// If you wanted to see the checks for the existence of the delegate methods, you could override respondsToSelector: in your delegate object
 - (BOOL)respondsToSelector:(SEL)aSelector
 {
     NSString *methodName = NSStringFromSelector(aSelector);
