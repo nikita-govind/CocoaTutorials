@@ -25,6 +25,11 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
     NSLog(@"NIKITA: Application finished launching. Now awaiting user action.");
+    
+    // Launch the second nib
+    //[[NSBundle mainBundle] loadNibNamed:@"ApplicationViewController"
+    //                              owner:self
+    //                            options:nil];
 }
 
 

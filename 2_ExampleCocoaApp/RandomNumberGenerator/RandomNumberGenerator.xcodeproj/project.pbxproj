@@ -16,6 +16,8 @@
 		41A86AAA2023D3EB00A5E863 /* RandomNumberGeneratorUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A86AA92023D3EB00A5E863 /* RandomNumberGeneratorUITests.m */; };
 		41A86AB82023D97A00A5E863 /* howTo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 41A86AB72023D97A00A5E863 /* howTo.txt */; };
 		41A86ABB2023DEE800A5E863 /* RandomController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A86ABA2023DEE800A5E863 /* RandomController.m */; };
+		41C19632202A7E110093E1DB /* MainMenu2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41C19631202A7E110093E1DB /* MainMenu2.xib */; };
+		41C19639202A81330093E1DB /* WindowController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C19638202A81330093E1DB /* WindowController2.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,9 @@
 		41A86AB72023D97A00A5E863 /* howTo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = howTo.txt; sourceTree = "<group>"; };
 		41A86AB92023DEBD00A5E863 /* RandomController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RandomController.h; sourceTree = "<group>"; };
 		41A86ABA2023DEE800A5E863 /* RandomController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RandomController.m; sourceTree = "<group>"; };
+		41C19631202A7E110093E1DB /* MainMenu2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu2.xib; sourceTree = "<group>"; };
+		41C19637202A81330093E1DB /* WindowController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WindowController2.h; sourceTree = "<group>"; };
+		41C19638202A81330093E1DB /* WindowController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WindowController2.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +120,9 @@
 				41A86A8A2023D3EB00A5E863 /* RandomNumberGenerator.xcdatamodeld */,
 				41A86AB92023DEBD00A5E863 /* RandomController.h */,
 				41A86ABA2023DEE800A5E863 /* RandomController.m */,
+				41C19631202A7E110093E1DB /* MainMenu2.xib */,
+				41C19637202A81330093E1DB /* WindowController2.h */,
+				41C19638202A81330093E1DB /* WindowController2.m */,
 			);
 			path = RandomNumberGenerator;
 			sourceTree = "<group>";
@@ -245,6 +253,7 @@
 			files = (
 				41A86A8E2023D3EB00A5E863 /* Assets.xcassets in Resources */,
 				41A86AB82023D97A00A5E863 /* howTo.txt in Resources */,
+				41C19632202A7E110093E1DB /* MainMenu2.xib in Resources */,
 				41A86A912023D3EB00A5E863 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41A86A892023D3EB00A5E863 /* AppDelegate.m in Sources */,
+				41C19639202A81330093E1DB /* WindowController2.m in Sources */,
 				41A86A942023D3EB00A5E863 /* main.m in Sources */,
 				41A86ABB2023DEE800A5E863 /* RandomController.m in Sources */,
 				41A86A8C2023D3EB00A5E863 /* RandomNumberGenerator.xcdatamodeld in Sources */,
