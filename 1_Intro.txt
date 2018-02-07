@@ -27,7 +27,16 @@
  (Everything above lies on top of the Mach Microkernel layer)
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-3. Programming with frameworks is done using Objective C.
+* WindowsServer:
+- It is an interface between the user and the application. It literally looks for changing pixels.
+For example: if a user entered something into a text box, those pixels have changed. If the app returns a result and that has to be shown on the screen.
+- Who tells the WindowsServer what pixels to change and in what shape/size to display? 
+The CoreGraphics framework of which Quartz Composer is a part
+-- Quartz is written in Metal and it talks directly to the GPU. These APIs can be accessed.
+-- They compose and render the image to be drawn back (shape/size of icons, etc) and this is sent to WindowsServer 
+
+* Cocoa:
+-Programming with frameworks is done using Objective C.
 
 [3] What are the tools used?
 ----------------------------
