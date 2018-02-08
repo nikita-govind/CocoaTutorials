@@ -1,45 +1,53 @@
+----------------------------------------------------------------------------------------------------------------------------------------
 1. New Project -> Cocoa app
+----------------------------------------------------------------------------------------------------------------------------------------
+
+- This creates a AppDelegate class, XIB file, Info.plist and main.m
 
 * XIB (XML Interface Builder) and NIB (NeXT Interface Builder):
 - A XIB file is an XML representation of user interface objects and their connections.
 - When you build your application, the XIB file is archived and compiled into a NIB file.
 (The XIB file is easier to work with, particularly for source control, but the NIB file is smaller and easier to parse, which is why the file that ships with your application is a NIB. )
 - Generally speaking, you will manipulate only XIB files, and your application will use only NIB files, but most developers use the words XIB and NIB interchangeably.
+----------------------------------------------------------------------------------------------------------------------------------------
+2. Construct your XIB:
+----------------------------------------------------------------------------------------------------------------------------------------
 
-2. Open XIB -> IB builder dock, select WIndow
+Open XIB -> IB builder dock, select Window
 => Now your window is visible on the canvas
-Add 2 buttons, 1 label. Name them as seen in the app
+Add 2 buttons, 1 label. Name them as seen in the app.
 
 * The dock in the IB (Left to the canvas)
 - This contains visible objects (like the buttons and labels we add) as well as Invisible objects (Like File's owner, First Responder, Delegate object, etc)
+----------------------------------------------------------------------------------------------------------------------------------------
+3. Add controller classes
+----------------------------------------------------------------------------------------------------------------------------------------
 
-- File's owner:
--- Here it is the NSApplication object.
--- The NSApplication object takes events from the event queue and forwards them to the appropriate window.
-
-3. Add controller classes for the actions of the buttons ie. create a interface and implementation file: RandomController.h and RandomController.m
-
-4. add instance variables and methods to your class.
+Lets have a separate class to handle the control of the actions of the buttons called RandomController
+- Add instance variables and methods to your class.
 ----------------------
        CLASS
 -----------------------
---> Variable (OUTLET)
+--> Variable (IBOUTLET)
 Point to an object
 1. resultTextField
 
---> Method (ACTION)
+--> Method (IBACTION)
 What the user's action was
 1. randomlyGenerateNumber
 2. randomlyGenerateNumberBasedOffTime
 
 Write the method definitions in the implementation files.
+----------------------------------------------------------------------------------------------------------------------------------------
+4. Make connections in the XIB
+----------------------------------------------------------------------------------------------------------------------------------------
 
-5. Create an instance/object of class RandomGenerator in the XIB
+a. Create an instance/object of class RandomGenerator in the XIB
 - add Object
 - Identity Inspector - Custom Class name - RandomController
 - Now the Connections Inspector will show the Outlet and the actions
 
-6. Add connections
+b. Add connections
 
 -----------------------------------------                                                                                   --------------------------------------------------
    CONTROLLER CLASS (RandomController)                                                                                                     UI OBJECTS
@@ -57,21 +65,109 @@ Step 1: Cntrl + Drag NSButton:RandomGenerateButton to the RandomController objec
 Step 2: Right click on RandomController class object. Drag the Outlet resultTextField to the NSTextField: ResultTextField
 Therefore, we set the pointer *resultTestField to point to the NSTextField instance called ResultTextField
 
-7. Run. Yahooooo! A working Cocoa app.
+For this XIB,
+- File's owner
+Class: NSApplication
+Outlet: delegate ->AppDelegate
 
-8. Issue: When app starts, the NSTextField shows the field name we labelled as "Result". Instead, make it display just the current time.
+- AppDelegate object (Delegate)
+There will always be only 1 AppDelegate for the App.
+The AppDelegate inherits from NSApplication.
+Class: AppDelegate
+Outlet:window -> XIB:window
+
+Run. A working Cocoa app.
+----------------------------------------------------------------------------------------------------------------------------------------
+5. Set initial state of the app
+----------------------------------------------------------------------------------------------------------------------------------------
+
+Issue: When app starts, the NSTextField shows the field name we labelled as "Result". Instead, make it display just the current time.
 - Solution: awakeFromNib
+----------------------------------------------------------------------------------------------------------------------------------------
+6. Loading a second NIB file
+----------------------------------------------------------------------------------------------------------------------------------------
 
-9. Check out the entire App event cycle in main.m
+- Add the supporting files:
+-> Add new file - Application - MainMenu2.xib
+-> Add new file - Cocoa App - subclass of NSWindowController - WindowController2. This created WindowController2.h and .m
+- In the .m, add the init method
+- As it is a subclass of NSWindowController, it will have a ivar 'window'
+-> In IB for MainMenu2.xib
+- Add a button to just distinguish this is XIB 2
+- Change the File's Owner to NSWindowController2.
+- Connect the NSWindowController2 outlet:window to the XIB: Window
+-> In the AppDelegate:
+- In applicationDidFinishLaunching, init alloc the WindowController2 and make it FrontandKey
+(Commented for now)
 
-10. Run and check out the console output:
-2018-02-05 21:21:14.841799-0800 RandomNumberGenerator[7783:1668402] NIKITA: App is starting
-2018-02-05 21:21:14.926310-0800 RandomNumberGenerator[7783:1668402] NIKITA: awakeFromNib AUTO method called for object RandomController
-2018-02-05 21:21:14.926385-0800 RandomNumberGenerator[7783:1668402] NIKITA: awakeFromNib AUTO method called for AppDelegate
-2018-02-05 21:21:15.065340-0800 RandomNumberGenerator[7783:1668402] NIKITA: Application finished launching. Now awaiting user action.
-2018-02-05 21:21:19.080902-0800 RandomNumberGenerator[7783:1668402] NIKITA: randomlyGenerateNumber method called = 84
-2018-02-05 21:21:24.683539-0800 RandomNumberGenerator[7783:1668402] NIKITA: randomlyGenerateNumberBasedOffTime method called
-2018-02-05 21:21:31.414828-0800 RandomNumberGenerator[7783:1668402] NIKITA: App terminated by user
-2018-02-05 21:21:31.419171-0800 RandomNumberGenerator[7783:1668402] NIKITA: Application is done. Closed.
+If we want a button in the first XIB, that launches the 2nd XIB:
+- Add a button to MainBundle.xib
+- Add an Object and change its class to WindowController
+- Connect the NSButton:action to the WindowController object: showWindow.
+
+For this XIB,
+- File's owner
+Class: WindowControllwe2
+Outlet: window -> XIB:Window
+
+Run.
+----------------------------------------------------------------------------------------------------------------------------------------
+7. Life Cycle of an app
+----------------------------------------------------------------------------------------------------------------------------------------
+1. Process is started - main.m: int main
+
+2. Calls method NSApplicationMain
+a. This is a startup function. This starts a runloop.
+b. Should be called just once from main.m and on main thread
+c. It reads the Info.plist:
+i. Reads the key: Main nib Base file (here it is MainMenu.xib) -> unarchives the objects in it
+ii.Reads the key: Principal class (here it is NSApplication) and creates an instance of that class
+
+3. Objects inside MainMenu.xib are created (random order)
+Each object's classes are alloced (here AppDelegate, RandomController), instances are inited, instance variables are set (connections)
+
+Some details about the Objects created:
+A. File's owner (SPECIAL):
+a. This is an object that is created programmatically. (For example, in MainMenu2.xib, it is a custom made class called WindowController2).
+b. By default, the NSApplication class is the primary owner of the primary NIB file and this comes ready-made for you when you create your Cocoa application.
+c. So when we load a nib file, the loading is done by NSDocumentController or the NSWindowController classes. Just because these classes help load the nib doesn't mean they must 'own' the nib. We need to set a file's owner and this object is already created programmaticallybefore loading the file.
+d.The File's Owner of the nib is the object that makes communication possible between this new nib and other parts of the application. If you want to access any objects in the nib after loading it, you can set an outlet in the file owner.
+
+Say we have a class called MyClass. What is the difference between setting the File's owner of the XIB to MyClass v/s adding an Object to the XIB whose class is MyClass?
+****
+
+4. Every object in the NIB file is sent message:awakeFromNIB
+awakeFromNib for all objects (RandomController, AppDelegate)
+
+5. AppDelegate.m:applicationDidFinishLaunching is called
+We are ready to listen to user events
+
+// MainEventLoop starts:
+// The NSApplication object waits for an User event.
+
+----------------------------      |                    |
+Mouse click/Keyboard input   -->  |  Windows Server    | --> WS puts the event on the event queue -> NSApplication object picks up from the queue -> forwards to the UI object (button etc) -> my class RandomController actionmethod is triggered ->
+(EVENT)                     |                    |
+----------------------------      |                    |
+|                    |
+
+
+-> If your code changes the data in a view, the view is redisplayed -> again the NSApplication object picks up the next event from the queue and the loop continues
+(Generally, each new window/sheet your application creates should be contained in it's own nib for faster loading of your app and smaller runtime footprint.)
+
+-> If at all we want to load a second NIB file, we do it here
+
+6. App terminates: User chooses Quit from the menu, NSApp is sent the terminate: message.
+if CoreData: applicationShouldTerminate
+then AppDelegate.m:applicationWillTerminate
+
+- Run and check out the console output:
+2018-02-07 15:47:16.959709-0800 RandomNumberGenerator[24574:934045] NIKITA: App is starting
+2018-02-07 15:47:17.072413-0800 RandomNumberGenerator[24574:934045] NIKITA: awakeFromNib AUTO method called for AppDelegate
+2018-02-07 15:47:17.072456-0800 RandomNumberGenerator[24574:934045] NIKITA: awakeFromNib AUTO method called for object RandomController
+2018-02-07 15:47:17.251285-0800 RandomNumberGenerator[24574:934045] NIKITA: Application finished launching. Now awaiting user action.
+2018-02-07 15:47:17.251349-0800 RandomNumberGenerator[24574:934045] NIKITA: Alloc-initing WindowController2
+2018-02-07 15:47:17.251376-0800 RandomNumberGenerator[24574:934045] NIKITA: Bringing the 2nd window front
+
 
 

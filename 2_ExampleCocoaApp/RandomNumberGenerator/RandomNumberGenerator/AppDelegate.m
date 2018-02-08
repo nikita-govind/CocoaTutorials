@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "WindowController2.h"
 
 @interface AppDelegate ()
 
@@ -27,9 +28,11 @@
     NSLog(@"NIKITA: Application finished launching. Now awaiting user action.");
     
     // Launch the second nib
-    //[[NSBundle mainBundle] loadNibNamed:@"ApplicationViewController"
-    //                              owner:self
-    //                            options:nil];
+    //WindowController2* test = [[WindowController2 alloc] init];
+    //NSLog(@"NIKITA: Bringing the 2nd window front");
+    //[test.window makeKeyAndOrderFront:test.self];
+    // Or hit the Button:New window
+    
 }
 
 
